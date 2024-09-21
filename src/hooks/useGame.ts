@@ -2,15 +2,22 @@ import {useState, useEffect} from 'react'
 import apiClient from '../services/api-client';
 import {CanceledError} from 'axios'
 
+export interface Platfrom{
+    id: number;
+    name: string;
+    slug: string;
+}
+
 export interface Game {
-    id: number,
-    name: string,
+    id: number;
+    name: string;
     background_image: string;
+    parent_platforms: {platform: Platfrom}[]
 }
 
 interface fetchGames{
-    count: number,
-    results: Game[],
+    count: number;
+    results: Game[];
 }
 
 const useGame = () => {
