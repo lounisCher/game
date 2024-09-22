@@ -1,7 +1,4 @@
-
-import useData from './useData';
 import genres from '../data/genres';
-import { data } from 'framer-motion/client';
 
 export interface Genre{
     id: number;
