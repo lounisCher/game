@@ -1,4 +1,4 @@
-import {HStack,Badge } from '@chakra-ui/react';
+import {Badge } from '@chakra-ui/react';
 
 
 interface Props{
