@@ -11,7 +11,7 @@ import {
   import { BsGlobe } from 'react-icons/bs';
   import { Icon, HStack } from "@chakra-ui/react";
   import { IconType } from "react-icons";
-  import { Platfrom } from "../hooks/useGame";
+  import { Platfrom } from "../hooks/usePlatforms";
   
 
 
