@@ -1,16 +1,17 @@
 import { useParams } from 'react-router-dom'
 import useGame from '../hooks/useGame';
-import { Heading, Spinner, Text } from '@chakra-ui/react';
+import { Heading, Spinner} from '@chakra-ui/react';
 import ExpandableText from '../components/ExpandableText';
+import GameAttributes from '../components/GameAttributes';
+import GameTrailer from '../components/GameTrailer';
 
 const GameDetailPage = () => {
   const {slug} = useParams();
-  const  {data: game, isLoading, error}         = useGame(slug!); //by adding this exclamation we are typescript that this value can never be undefiened
+  const  {data: game, isLoading, error}= useGame(slug!); //by adding this exclamation we are typescript that this value can never be undefiened
 
   if(isLoading) return <Spinner />
 
   if(error || !game) throw error;
-  console.log(game.description_raw)
 
   return (
     <>
@@ -19,7 +20,10 @@ const GameDetailPage = () => {
       </Heading>
       <ExpandableText>
         {game.description_raw}
-      </ExpandableText>    
+      </ExpandableText>
+      <GameAttributes game={game}/>
+      <GameTrailer gameId={game.id}/> 
+
     </>
   )
 }

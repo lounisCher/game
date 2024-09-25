@@ -7,11 +7,11 @@ import ErrorsPage from "./pages/ErrorsPage";
 const router = createBrowserRouter([
     {
         path:"/",
-        element:<Layout />,
-        errorElement: <ErrorsPage />,
+        element: <Layout/>,
+        errorElement: <ErrorsPage/>,
         children:[
-            { index: true, element:<HomePage /> },
-            { path:"games/:slug", element:<GameDetailPage />}
+            {index: true, element:<HomePage/>},
+            {path:'/games/:slug', element:<GameDetailPage/>},
         ]
     }
 ])
